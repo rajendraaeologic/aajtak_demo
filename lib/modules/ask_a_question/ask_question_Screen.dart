@@ -56,55 +56,41 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
       body: BlocBuilder<CategoryBloc, CategoryState>(
         builder: (context, state) {
           if(state.isCategoryLoading) return Center(child: CircularProgressIndicator());
-          return Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.all(16),
-                height: MediaQuery.of(context).size.height * 0.075,
-                color: Colors.blue[800],
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(AppStrings.walletBalanceText),
-                    BorderedButton(
-                        title: AppStrings.addMoneyText,
-                        titleStyle: TextStyle(color: Colors.blue[700]),
-                        borderColor: Colors.black,
-                        backgroundColor: Colors.white,
-                        onTap: () {}),
-                  ],
+          return SingleChildScrollView(
+            physics: AlwaysScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  height: MediaQuery.of(context).size.height * 0.075,
+                  color: Colors.blue[800],
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(AppStrings.walletBalanceText),
+                      BorderedButton(
+                          title: AppStrings.addMoneyText,
+                          titleStyle: TextStyle(color: Colors.blue[700]),
+                          borderColor: Colors.black,
+                          backgroundColor: Colors.white,
+                          onTap: () {}),
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    const AskQuestionElement(),
-                    const SizedBox(height: 12.0),
-                    ChooseCategoryElement(items: state.list),
-                    const SizedBox(height: 12.0),
-                    Container(
-                      height: 150,
-                      padding: const EdgeInsets.all(5.0),
-                      decoration: BoxDecoration(
-                          border: Border.all(width: 1.0, color: Colors.grey),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(5.0))),
-                      child: const TextField(
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                        ),
-                        maxLength: 150,
-                        textInputAction: TextInputAction.newline,
-                        keyboardType: TextInputType.multiline,
-                        maxLines: 5,
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+                Container(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      const AskQuestionElement(),
+                      const SizedBox(height: 12.0),
+                      ChooseCategoryElement(items: state.list),
+                      const SizedBox(height: 12.0),
+                    ],
+                  ),
+                )
+              ],
+            ),
           );
         },
       ),
