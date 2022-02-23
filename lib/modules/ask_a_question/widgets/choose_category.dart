@@ -19,14 +19,15 @@ class ChooseCategoryElement extends StatefulWidget {
 class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
   String? dropDownValue;
   var list = [];
-  var ideaQuestions = [];
+  List<String> ideaQuestions = [];
 
   @override
   void initState() {
     for(int i=0; i < widget.items.length; i++) {
       list.add(widget.items[i].name);
     }
-    dropDownValue = list[0] ?? '';
+    dropDownValue = list[0];
+    ideaQuestions = widget.items[0].suggestions!;
     super.initState();
   }
 
@@ -55,7 +56,7 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
                 onChanged: (dynamic newValue) {
                   setState(() {
                     dropDownValue = newValue;
-                    ideaQuestions = widget.items[list.indexOf(newValue)].suggestions!.cast<dynamic>();
+                    ideaQuestions = widget.items[list.indexOf(newValue)].suggestions!;
                   });
                 },
               ),
