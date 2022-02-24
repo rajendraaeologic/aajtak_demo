@@ -18,7 +18,6 @@ class AskQuestionScreen extends StatefulWidget {
 }
 
 class _AskQuestionScreenState extends State<AskQuestionScreen> {
-  var _dropDownValue = ['A', 'B', 'C', 'D', 'E', 'F'];
 
   @override
   void initState() {
@@ -49,15 +48,17 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.menu),
+        child: const Icon(Icons.menu),
         backgroundColor: Colors.orangeAccent,
-        onPressed: () {},
+        onPressed: () {
+
+        },
       ),
       body: BlocBuilder<CategoryBloc, CategoryState>(
         builder: (context, state) {
-          if(state.isCategoryLoading) return Center(child: CircularProgressIndicator());
+          if(state.isCategoryLoading) return const Center(child: CircularProgressIndicator());
           return SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             child: Column(
               children: [
                 Container(

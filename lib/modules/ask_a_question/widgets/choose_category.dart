@@ -64,21 +64,16 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
           ),
         ),
         const SizedBox(height: 10.0),
-        Container(
-          height: 150,
-          padding: const EdgeInsets.all(5.0),
-          decoration: BoxDecoration(
-              border: Border.all(width: 1.0, color: Colors.grey),
-              borderRadius:
-              const BorderRadius.all(Radius.circular(5.0))),
-          child: const TextField(
-            decoration: InputDecoration(
-              border: InputBorder.none,
-            ),
-            maxLength: 150,
-            textInputAction: TextInputAction.newline,
-            keyboardType: TextInputType.multiline,
-            maxLines: 5,
+         const TextField(
+              maxLength: 150,
+              maxLines: 3,
+              decoration: InputDecoration(
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                ),
           ),
         ),
         const SizedBox(height: 10.0),

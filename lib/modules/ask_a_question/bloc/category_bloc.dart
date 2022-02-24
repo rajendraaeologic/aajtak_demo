@@ -19,8 +19,12 @@ class CategoryBloc extends Bloc<CategoryEvent, CategoryState> {
   CategoryBloc() : super(CategoryState.initial()) {
     on<_getAllCategory>((event, emit) async {
       emit(state.copyWith(isCategoryLoading: true));
-      final Category data = await remoteRepository.getAllCategory();
-      emit(state.copyWith(isCategoryLoading: false, list: data.data!));
+      try {
+        final Category data = await remoteRepository.getAllCategory();
+        emit(state.copyWith(isCategoryLoading: false, list: data.data!));
+      } catch(e) {
+          print(e.toString());
+      }
     });
   }
 }
