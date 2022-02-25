@@ -20,6 +20,7 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
   String? dropDownValue;
   var list = [];
   List<String> ideaQuestions = [];
+  final textController = TextEditingController();
 
   @override
   void initState() {
@@ -55,6 +56,7 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
                 }).toList(),
                 onChanged: (dynamic newValue) {
                   setState(() {
+                    textController.clear();
                     dropDownValue = newValue;
                     ideaQuestions = widget.items[list.indexOf(newValue)].suggestions!;
                   });
@@ -64,10 +66,11 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
           ),
         ),
         const SizedBox(height: 10.0),
-         const TextField(
+          TextField(
+              controller: textController,
               maxLength: 150,
               maxLines: 3,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.grey),
                 ),
@@ -85,6 +88,10 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
             itemCount: ideaQuestions.length,
             itemBuilder: (context, index) {
               return ListTile(
+                onTap: () {
+                  textController.clear();
+                  textController.text = ideaQuestions[index];
+                },
                 leading: const Icon(Icons.lightbulb_outline, color: AppColors.orangeColor),
                 title: Text(ideaQuestions[index]),
               );
