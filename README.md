@@ -1,16 +1,28 @@
-# aajtak_demo
+# Aaj tak demo app
 
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Hi I am Rajendra. This is the demo project whatever you have assigned to me. Due to the low bandwidth I couldn't done complete it but mostly I have done.
+In this project you will get the over all view of my code base, stucture, library etc.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Used library
+1. http (for networking)
+2. flutter_bloc (as state management)
+3. freezed (generate data class)
+4. build_runner (code generator)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# github Link
+https://www.github.com/thecodenest
+
+# youtube link
+https://www.youtube.com/thecodenest
+
+
+
+
+Thankyou
+Rajendra Bisht
