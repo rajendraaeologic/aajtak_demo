@@ -1,4 +1,5 @@
 import 'package:aajtak_demo/modules/ask_a_question/bloc/category_bloc.dart';
+import 'package:aajtak_demo/modules/profile/bloc/friends_family_bloc.dart';
 import 'package:aajtak_demo/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           lazy: false,
           create: (_) => CategoryBloc(),
+        ),
+        BlocProvider(
+          lazy: false,
+          create: (_) => FriendsFamilyBloc(),
         ),
       ],
       child: MaterialApp(

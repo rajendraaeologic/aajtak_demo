@@ -2,6 +2,8 @@ import 'package:aajtak_demo/components/bordered_button.dart';
 import 'package:aajtak_demo/components/bottom_navigation_bar.dart';
 import 'package:aajtak_demo/modules/ask_a_question/widgets/ask_question_element.dart';
 import 'package:aajtak_demo/modules/ask_a_question/widgets/choose_category.dart';
+import 'package:aajtak_demo/modules/profile/repository/friends_family_repository.dart';
+import 'package:aajtak_demo/router.dart';
 import 'package:aajtak_demo/utils/icons.dart';
 import 'package:aajtak_demo/utils/strings.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +24,7 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
   @override
   void initState() {
     context.read<CategoryBloc>().add(const CategoryEvent.getAllCategory());
+    FriendsFamilyRepository().getAllFriendsFamily();
     super.initState();
   }
 
@@ -34,7 +37,10 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
-            child: Image.asset(AppIcons.profile, height: 30, width: 30),
+            child: InkWell(
+              onTap: () => Navigator.pushNamed(context, Routes.profileScreen),
+                child: Image.asset(AppIcons.profile, height: 30, width: 30)
+            ),
           ),
         ],
         leading: Image.asset(AppIcons.hamburger),
@@ -51,7 +57,6 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
         child: const Icon(Icons.menu),
         backgroundColor: Colors.orangeAccent,
         onPressed: () {
-
         },
       ),
       body: BlocBuilder<CategoryBloc, CategoryState>(

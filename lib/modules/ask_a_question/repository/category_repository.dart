@@ -5,7 +5,7 @@ import 'package:aajtak_demo/config.dart';
 import 'package:aajtak_demo/modules/ask_a_question/model/category.dart';
 import 'package:http/http.dart' as http;
 
-class RemoteRepository {
+class CategoryRepository {
   Future<Category> getAllCategory() async {
     var client = http.Client();
     try {

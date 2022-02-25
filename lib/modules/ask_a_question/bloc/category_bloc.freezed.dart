@@ -181,10 +181,13 @@ class _$CategoryStateTearOff {
   const _$CategoryStateTearOff();
 
   _CategoryState call(
-      {required List<Data> list, required bool isCategoryLoading}) {
+      {required List<Data> list,
+      required bool isCategoryLoading,
+      String? errorMsg}) {
     return _CategoryState(
       list: list,
       isCategoryLoading: isCategoryLoading,
+      errorMsg: errorMsg,
     );
   }
 }
@@ -196,6 +199,7 @@ const $CategoryState = _$CategoryStateTearOff();
 mixin _$CategoryState {
   List<Data> get list => throw _privateConstructorUsedError;
   bool get isCategoryLoading => throw _privateConstructorUsedError;
+  String? get errorMsg => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CategoryStateCopyWith<CategoryState> get copyWith =>
@@ -207,7 +211,7 @@ abstract class $CategoryStateCopyWith<$Res> {
   factory $CategoryStateCopyWith(
           CategoryState value, $Res Function(CategoryState) then) =
       _$CategoryStateCopyWithImpl<$Res>;
-  $Res call({List<Data> list, bool isCategoryLoading});
+  $Res call({List<Data> list, bool isCategoryLoading, String? errorMsg});
 }
 
 /// @nodoc
@@ -223,6 +227,7 @@ class _$CategoryStateCopyWithImpl<$Res>
   $Res call({
     Object? list = freezed,
     Object? isCategoryLoading = freezed,
+    Object? errorMsg = freezed,
   }) {
     return _then(_value.copyWith(
       list: list == freezed
@@ -233,6 +238,10 @@ class _$CategoryStateCopyWithImpl<$Res>
           ? _value.isCategoryLoading
           : isCategoryLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      errorMsg: errorMsg == freezed
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -244,7 +253,7 @@ abstract class _$CategoryStateCopyWith<$Res>
           _CategoryState value, $Res Function(_CategoryState) then) =
       __$CategoryStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Data> list, bool isCategoryLoading});
+  $Res call({List<Data> list, bool isCategoryLoading, String? errorMsg});
 }
 
 /// @nodoc
@@ -262,6 +271,7 @@ class __$CategoryStateCopyWithImpl<$Res>
   $Res call({
     Object? list = freezed,
     Object? isCategoryLoading = freezed,
+    Object? errorMsg = freezed,
   }) {
     return _then(_CategoryState(
       list: list == freezed
@@ -272,6 +282,10 @@ class __$CategoryStateCopyWithImpl<$Res>
           ? _value.isCategoryLoading
           : isCategoryLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      errorMsg: errorMsg == freezed
+          ? _value.errorMsg
+          : errorMsg // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -279,16 +293,19 @@ class __$CategoryStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CategoryState implements _CategoryState {
-  const _$_CategoryState({required this.list, required this.isCategoryLoading});
+  const _$_CategoryState(
+      {required this.list, required this.isCategoryLoading, this.errorMsg});
 
   @override
   final List<Data> list;
   @override
   final bool isCategoryLoading;
+  @override
+  final String? errorMsg;
 
   @override
   String toString() {
-    return 'CategoryState(list: $list, isCategoryLoading: $isCategoryLoading)';
+    return 'CategoryState(list: $list, isCategoryLoading: $isCategoryLoading, errorMsg: $errorMsg)';
   }
 
   @override
@@ -299,14 +316,18 @@ class _$_CategoryState implements _CategoryState {
                 const DeepCollectionEquality().equals(other.list, list)) &&
             (identical(other.isCategoryLoading, isCategoryLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.isCategoryLoading, isCategoryLoading)));
+                    .equals(other.isCategoryLoading, isCategoryLoading)) &&
+            (identical(other.errorMsg, errorMsg) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorMsg, errorMsg)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(isCategoryLoading);
+      const DeepCollectionEquality().hash(isCategoryLoading) ^
+      const DeepCollectionEquality().hash(errorMsg);
 
   @JsonKey(ignore: true)
   @override
@@ -317,12 +338,15 @@ class _$_CategoryState implements _CategoryState {
 abstract class _CategoryState implements CategoryState {
   const factory _CategoryState(
       {required List<Data> list,
-      required bool isCategoryLoading}) = _$_CategoryState;
+      required bool isCategoryLoading,
+      String? errorMsg}) = _$_CategoryState;
 
   @override
   List<Data> get list => throw _privateConstructorUsedError;
   @override
   bool get isCategoryLoading => throw _privateConstructorUsedError;
+  @override
+  String? get errorMsg => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CategoryStateCopyWith<_CategoryState> get copyWith =>
