@@ -30,8 +30,8 @@ class _MyProfileState extends State<MyProfile> {
                       color: AppColors.orangeColor,
                       borderRadius: BorderRadius.all(Radius.circular(5.0))),
                   tabs: [
-                    Tab(text: AppStrings.basicProfile),
-                    Tab(text: AppStrings.friendsFamilyProfile),
+                    FittedBox(child: Tab(text: AppStrings.basicProfile)),
+                    FittedBox(child: Tab(text: AppStrings.friendsFamilyProfile)),
                   ],
                 ),
               ),
