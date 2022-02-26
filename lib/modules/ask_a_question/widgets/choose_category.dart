@@ -2,6 +2,7 @@
 import 'package:aajtak_demo/modules/ask_a_question/model/category.dart';
 import 'package:aajtak_demo/utils/colors.dart';
 import 'package:aajtak_demo/utils/strings.dart';
+import 'package:aajtak_demo/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class ChooseCategoryElement extends StatefulWidget {
@@ -37,12 +38,12 @@ class _ChooseCategoryElementState extends State<ChooseCategoryElement> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const Text(AppStrings.chooseCategoryText, textAlign: TextAlign.start),
+        Text(AppStrings.chooseCategoryText, textAlign: TextAlign.start, style: AppStyles.blackBoldFont),
         const SizedBox(height: 8.0),
         Container(
           decoration: const BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(
-                      5.0) //                 <--- border radius here
+                      5.0)
                   )),
           child: Card(
             child: DropdownButtonHideUnderline(

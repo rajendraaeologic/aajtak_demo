@@ -2,10 +2,10 @@ import 'package:aajtak_demo/components/bordered_button.dart';
 import 'package:aajtak_demo/components/bottom_navigation_bar.dart';
 import 'package:aajtak_demo/modules/ask_a_question/widgets/ask_question_element.dart';
 import 'package:aajtak_demo/modules/ask_a_question/widgets/choose_category.dart';
-import 'package:aajtak_demo/modules/profile/repository/friends_family_repository.dart';
 import 'package:aajtak_demo/router.dart';
 import 'package:aajtak_demo/utils/icons.dart';
 import 'package:aajtak_demo/utils/strings.dart';
+import 'package:aajtak_demo/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +24,7 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
   @override
   void initState() {
     context.read<CategoryBloc>().add(const CategoryEvent.getAllCategory());
-    FriendsFamilyRepository().getAllFriendsFamily();
+    //FriendsFamilyRepository().getAllFriendsFamily();
     super.initState();
   }
 
@@ -74,7 +74,7 @@ class _AskQuestionScreenState extends State<AskQuestionScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Text(AppStrings.walletBalanceText),
+                      Text(AppStrings.walletBalanceText, style: AppStyles.whiteBoldFont,),
                       BorderedButton(
                           title: AppStrings.addMoneyText,
                           titleStyle: TextStyle(color: Colors.blue[700]),

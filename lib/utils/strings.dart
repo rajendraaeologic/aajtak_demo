@@ -11,5 +11,6 @@ class AppStrings {
   static const String orderHistory = 'Order History';
   static const String basicProfile = 'Basic Profile';
   static const String friendsFamilyProfile = 'Friends and Family Profile';
+  static const String delete = 'Do you really want to delete?';
 }
 

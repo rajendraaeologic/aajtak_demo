@@ -26,4 +26,5 @@ class RouterApp {
 class Routes {
   static const String askQuestionScreen = '/askQuestionScreen';
   static const String profileScreen = '/profileScreen';
+  static const String noInternetScreen = '/noInternetScreen';
 }

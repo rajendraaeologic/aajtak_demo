@@ -1,13 +1,22 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 import 'colors.dart';
 
 class AppStyles {
 
-  static TextStyle roboto24BlackRegular = TextStyle(
-      fontFamily: '',
-      color: AppColors.orangeColor,
-      fontWeight: FontWeight.normal,
-      fontSize: 24
+  static TextStyle whiteBoldFont =  const TextStyle(
+      fontStyle: FontStyle.normal,
+      color: Colors.white,
+      fontWeight: FontWeight.bold,
+      fontSize: 13
+  );
+
+  static TextStyle blackBoldFont =  const TextStyle(
+      fontStyle: FontStyle.normal,
+      color: Colors.black,
+      fontWeight: FontWeight.bold,
+      fontSize: 13
   );
 }
